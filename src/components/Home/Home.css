@@ -1,0 +1,17 @@
+.wrapper {
+  text-align: center;
+  margin-top: 50px;
+}
+.rules {
+  display: inline-block;
+  margin-top: 55px;
+}
+.carousel-item img {
+  width: 92% !important;
+  height: 500px;
+  margin-left: 62px;
+}
+.discriptionContainer h2 {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+/* will be background-color #ffffe2; */

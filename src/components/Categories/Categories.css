@@ -1,0 +1,10 @@
+.wrapper {
+  text-align: center;
+  margin-top: 25px;
+}
+.title {
+  display: inline-block;
+  color: #f15a47;
+}
+
+/* will be background-color #ffffe2; */
