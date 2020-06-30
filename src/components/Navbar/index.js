@@ -37,10 +37,10 @@ function NavBar() {
                 </p>
               </li>
             </Link>
-            <Link to="/login">
+            <Link to="/questions">
               <li className="nav-item">
                 <p className="nav-link" href="#">
-                  Login
+                  Questions
                 </p>
               </li>
             </Link>
