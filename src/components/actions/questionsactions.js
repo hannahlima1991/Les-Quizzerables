@@ -5,9 +5,22 @@ export const updatedQuestionsList = (data) => {
     data: data,
   };
 };
+
+export const selectAnswer = (data) => {
+  return {
+    type: "SELECT_ANSWER",
+    data,
+  };
+};
 export const handleSubmit = () => {
   return {
     type: "HANDLE_SUBMIT",
+  };
+};
+
+export const submitAnswer = () => {
+  return {
+    type: "SUBMIT_ANSWER",
   };
 };
 

@@ -4,9 +4,64 @@
 }
 
 .submitContainer {
-  margin-top: 30px;
+  margin-top: 80px;
   margin-right: 10px;
-  float: right;
+  /* float: right; */
+}
+.allChoices {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #f15a47;
+  background-color: white;
+  border: none;
+  border-radius: 85px;
+  box-shadow: 0 9px #999;
+}
+.selectedChoice {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #f15a47;
+  border: none;
+  border-radius: 85px;
+  box-shadow: 0 9px #999;
+}
+.choicesContainer {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+.question {
+  margin-top: 50px;
+}
+.submitButton {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: #f15a47;
+  border: 1px solid salmon;
+  border-radius: 85px;
+}
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: inherit;
 }
 
 /* will be background-color #ffffe2; */

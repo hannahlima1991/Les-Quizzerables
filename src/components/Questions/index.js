@@ -3,12 +3,14 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   updatedQuestionsList,
   errorHandler,
+  selectAnswer,
+  submitAnswer,
 } from "../actions/questionsactions";
 import "./Questions.css";
 
 function Questions(props) {
   const dispatch = useDispatch();
-  const { counter, questionsList } = useSelector(
+  const { userChoice, counter, questionsList } = useSelector(
     (state) => state.questionsReducer
   );
 
@@ -33,14 +35,41 @@ function Questions(props) {
       </h1>
       {questionsList.length > 0 ? (
         <div className="question">
-          <p>{currentQuestion.question}</p>
-          <div className="questionContainer">
-            {currentQuestion.allChoices.map((choice) => (
-              <button>{choice}</button>
+          <h4>{currentQuestion.question}</h4>
+          <div className="choicesContainer">
+            {currentQuestion.allChoices.map((choice, index) => (
+              <div>
+                <button
+                  className={`${
+                    userChoice === choice ? "selectedChoice" : "allChoices"
+                  }`}
+                  value={index}
+                  onClick={() => dispatch(selectAnswer(choice))}
+                  // onClick={() => console.log("yo")}
+                >
+                  {choice}
+                </button>
+              </div>
             ))}
           </div>
           <div className="submitContainer">
-            <button>Submit</button>
+            {counter < questionsList.length - 1 ? (
+              <button
+                disabled={userChoice === "" ? true : false}
+                className="submitButton"
+                onClick={() => dispatch(submitAnswer())}
+              >
+                Submit
+              </button>
+            ) : (
+              <button
+                disabled={userChoice === "" ? true : false}
+                className="submitButton"
+                onClick={() => console.log("fuck yea")}
+              >
+                Finish
+              </button>
+            )}
           </div>
         </div>
       ) : null}
