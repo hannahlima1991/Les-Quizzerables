@@ -45,10 +45,11 @@ const questionsReducer = (state = initialState, action) => {
       const { counter, questionsList, userChoice } = state;
       const currentQuestion = questionsList[counter];
       const isQuestionRight = userChoice === currentQuestion.correct_answer;
+      const isFinishButton = counter >= questionsList.length - 1;
 
       const points = isQuestionRight ? state.points + 10 : state.points;
 
-      const newCounter = counter + 1;
+      const newCounter = isFinishButton ? counter : counter + 1;
 
       return { ...state, counter: newCounter, points, userChoice: "" };
     case "RESET_QUESTIONS_STATE":
