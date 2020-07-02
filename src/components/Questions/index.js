@@ -27,6 +27,9 @@ function Questions(props) {
   };
 
   const currentQuestion = questionsList[counter];
+  if (currentQuestion) {
+    console.log(atob(currentQuestion.correct_answer));
+  }
   return (
     <div className="wrapper">
       <h1>
@@ -69,7 +72,10 @@ function Questions(props) {
               <button
                 disabled={userChoice === "" ? true : false}
                 className="submitButton"
-                onClick={() => props.history.push("/totalscore")}
+                onClick={() => {
+                  dispatch(submitAnswer());
+                  props.history.push("/totalscore");
+                }}
               >
                 Finish
               </button>
