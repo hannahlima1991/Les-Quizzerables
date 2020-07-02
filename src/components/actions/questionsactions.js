@@ -29,3 +29,8 @@ export const errorHandler = () => {
     type: "ERROR_HANDLER",
   };
 };
+export const resetQuestionsState = () => {
+  return {
+    type: "RESET_QUESTIONS_STATE",
+  };
+};

@@ -19,7 +19,7 @@ function Questions(props) {
   }, []);
 
   const getquestions = async () => {
-    const questionsRequest = `https://opentdb.com/api.php?amount=10&category=${props.match.params.id}&type=multiple`;
+    const questionsRequest = `https://opentdb.com/api.php?amount=10&category=${props.match.params.id}&type=multiple&encode=base64`;
     const response = await fetch(questionsRequest);
     const data = await response.json();
     const questions = data.results;
@@ -27,30 +27,34 @@ function Questions(props) {
   };
 
   const currentQuestion = questionsList[counter];
-
   return (
     <div className="wrapper">
       <h1>
         Question {counter + 1}/ {questionsList.length}{" "}
       </h1>
+
       {questionsList.length > 0 ? (
         <div className="question">
-          <h4>{currentQuestion.question}</h4>
+          <div className="questionContainer">
+            <h2>{atob(currentQuestion.question)}</h2>
+          </div>
           <div className="choicesContainer">
-            {currentQuestion.allChoices.map((choice, index) => (
-              <div>
-                <button
-                  className={`${
-                    userChoice === choice ? "selectedChoice" : "allChoices"
-                  }`}
-                  value={index}
-                  onClick={() => dispatch(selectAnswer(choice))}
-                  // onClick={() => console.log("yo")}
-                >
-                  {choice}
-                </button>
-              </div>
-            ))}
+            {currentQuestion.allChoices.map((choice, index) => {
+              // console.log(choice);
+              return (
+                <div className="col-lg-3">
+                  <button
+                    className={`${
+                      userChoice === choice ? "selectedChoice" : "allChoices"
+                    }`}
+                    value={index}
+                    onClick={() => dispatch(selectAnswer(choice))}
+                  >
+                    {atob(choice)}
+                  </button>
+                </div>
+              );
+            })}
           </div>
           <div className="submitContainer">
             {counter < questionsList.length - 1 ? (
@@ -65,7 +69,7 @@ function Questions(props) {
               <button
                 disabled={userChoice === "" ? true : false}
                 className="submitButton"
-                onClick={() => console.log("fuck yea")}
+                onClick={() => props.history.push("/totalscore")}
               >
                 Finish
               </button>

@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import categoriesReducer from "../src/components/reducers/categoriesReducer";
 import questionsReducer from "../src/components/reducers/questionsReducer";
 import { combineReducers } from "redux";
+
 const allReducers = combineReducers({ categoriesReducer, questionsReducer });
 
 const store = createStore(

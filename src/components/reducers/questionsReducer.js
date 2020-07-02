@@ -5,14 +5,35 @@ const initialState = {
   userChoice: "",
 };
 
+function shuffle(array) {
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
 const questionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case "UPDATED_QUESTIONS_LIST":
       const formattedQuestionsArray = action.data.map((question) => {
-        const allChoices = [
+        let allChoices = [
           ...question.incorrect_answers,
           question.correct_answer,
         ];
+        allChoices = shuffle(allChoices);
         return { ...question, allChoices };
       });
       return { ...state, questionsList: formattedQuestionsArray };
@@ -24,15 +45,15 @@ const questionsReducer = (state = initialState, action) => {
       const { counter, questionsList, userChoice } = state;
       const currentQuestion = questionsList[counter];
       const isQuestionRight = userChoice === currentQuestion.correct_answer;
-      console.log("is this question right?", isQuestionRight);
 
       const points = isQuestionRight ? state.points + 10 : state.points;
-      console.log("points are", points);
 
       const newCounter = counter + 1;
-      console.log("counter is", newCounter);
 
       return { ...state, counter: newCounter, points, userChoice: "" };
+    case "RESET_QUESTIONS_STATE":
+      console.log("reseting state");
+      return initialState;
     default:
       return state;
   }

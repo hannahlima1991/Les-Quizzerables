@@ -26,26 +26,22 @@ function Categories() {
   return (
     <div className="wrapper">
       <h1 className="title">Categories</h1>
+
       <div className="row categoriesContainer">
         {categoriesList.map((category, i) => {
           const categoryId = "/questions/category/" + category.id;
           const { id, name } = category;
           return (
-            <div className="col-lg-4 categoryChoice" key={i}>
-              <div className="card">
-                <div className="card-body">
-                  <h5 className="card-title">
-                    <b>{name}</b>
-                  </h5>
-                  <div>
-                    <Link to={categoryId}>
-                      <button href="#" className="btn btn-primary">
-                        Choose Me !
-                      </button>
-                    </Link>
+            <div className="col-lg-3 categoryChoice" key={i}>
+              <Link to={categoryId}>
+                <div className="card">
+                  <div className="card-body">
+                    <h4 className="card-title">
+                      <b>{name}</b>
+                    </h4>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
           );
         })}
