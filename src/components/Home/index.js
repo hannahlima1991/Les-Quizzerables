@@ -3,13 +3,12 @@ import "./Home.css";
 import image1 from "../assets/image1.jpg";
 import image2 from "../assets/image2.jpg";
 import image3 from "../assets/image3.jpg";
-
 import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div className="wrapper">
-      <div
+    <div className="wrapper row">
+      {/* <div
         id="carouselExampleCaptions"
         className="carousel slide"
         data-ride="carousel"
@@ -83,10 +82,9 @@ function Home() {
           ></span>
           <span className="sr-only">Next</span>
         </a>
-      </div>
-      <br></br>
+      </div> */}
       <Link to="/categories">
-        <button type="button" className="btn btn-primary btn-lg">
+        <button type="button" className="getStartedButton">
           Get Started
         </button>
       </Link>

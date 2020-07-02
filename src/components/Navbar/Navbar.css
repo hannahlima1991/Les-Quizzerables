@@ -1,6 +1,23 @@
 .navHeight {
   height: 55px;
 }
+.navbar-brand {
+  color: #9e0059;
+}
 .navHeight p {
   margin-top: 10px;
+}
+.bg-primary {
+  background-color: #f8f9fa !important;
+}
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+@media only screen and (max-width: 770px) {
+  .navbar-nav {
+    background-color: white;
+    box-shadow: 0 8px 6px -6px gray;
+  }
 }

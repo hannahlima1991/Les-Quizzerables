@@ -1,13 +1,19 @@
 .wrapper {
   text-align: center;
-  margin-top: 25px;
+}
+.wrapper h1 {
+  margin: 0px !important;
+  padding: 10px 0px !important;
 }
 .title {
-  display: inline-block;
-  color: #f15a47;
+  font-size: 60px;
+  color: #9e0059 !important;
+  font-family: monospace;
 }
+
 .card {
   margin: 50px 20px;
+  z-index: -1;
 }
 /* .row {
   display: flex;
@@ -15,8 +21,16 @@
 .categoriesContainer {
   display: flex;
 }
-.card-body h5 b {
-  color: #f15a47;
+.card-body h4 b {
+  color: #ee4266;
+  font-family: monospace;
 }
+
+/* .titleContainer {
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+} */
 
 /* will be background-color #ffffe2; */

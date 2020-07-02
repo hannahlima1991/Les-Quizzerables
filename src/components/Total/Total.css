@@ -1,0 +1,15 @@
+.scoreTitle {
+  color: #9e0059;
+  font-family: monospace;
+  font-size: 40px;
+  margin-top: 20px;
+}
+.scoreImage {
+  width: 320px;
+  margin-top: 20px;
+}
+.description {
+  color: #ee4266;
+  font-family: monospace;
+  margin-top: 10px;
+}

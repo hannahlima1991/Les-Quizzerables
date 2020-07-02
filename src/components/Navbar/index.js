@@ -1,11 +1,14 @@
 import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import * as questionsActions from "../actions/questionsactions";
 
 function NavBar() {
+  const dispatch = useDispatch();
   return (
-    <div className="navBar">
-      <nav className="navbar navbar-expand-lg navbar navbar-dark bg-primary navHeight">
+    <div className="navBar row">
+      <nav className=" w-100 navbar navbar-expand-lg navbar navbar-light bg-light navHeight">
         <p className="navbar-brand" href="#">
           Lés Quizzrables
         </p>
@@ -24,26 +27,36 @@ function NavBar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <Link to="/">
-              <li className="nav-item active">
+              <li
+                onClick={() => dispatch(questionsActions.resetQuestionsState())}
+                className="nav-item active"
+              >
                 <p className="nav-link" href="#">
                   Home <span className="sr-only">(current)</span>
                 </p>
               </li>
             </Link>
             <Link to="/categories">
-              <li className="nav-item">
+              <li
+                className="nav-item"
+                onClick={() => dispatch(questionsActions.resetQuestionsState())}
+              >
                 <p className="nav-link" href="#">
                   Categories
                 </p>
               </li>
             </Link>
-            <Link to="/questions">
-              <li className="nav-item">
-                <p className="nav-link" href="#">
-                  Questions
-                </p>
-              </li>
-            </Link>
+
+            <li className="nav-item">
+              <p
+                className="nav-link disabled"
+                href="#"
+                tabindex="-1"
+                aria-disabled="true"
+              >
+                Questions
+              </p>
+            </li>
           </ul>
         </div>
       </nav>

@@ -1,6 +1,7 @@
-.wrapper {
-  color: #f15a47;
+.wrapper h1 {
+  color: #9e0059;
   margin-top: 25px;
+  font-family: monospace;
 }
 
 .submitContainer {
@@ -16,7 +17,7 @@
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: #f15a47;
+  color: #9e0059;
   background-color: white;
   border: none;
   border-radius: 85px;
@@ -30,8 +31,8 @@
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: #fff;
-  background-color: #f15a47;
+  color: white;
+  background-color: #ee4266;
   border: none;
   border-radius: 85px;
   box-shadow: 0 9px #999;
@@ -45,6 +46,7 @@
 }
 .question {
   margin-top: 50px;
+  /* width: 600px; */
 }
 .submitButton {
   display: inline-block;
@@ -54,14 +56,33 @@
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: white;
-  background-color: #f15a47;
-  border: 1px solid salmon;
+  color: #ee4266;
+  background-color: white;
+  border: 2px solid #ee4266;
   border-radius: 85px;
+  font-weight: 400;
 }
 .submitButton:disabled {
-  opacity: 0.5;
+  opacity: 0.3;
   cursor: inherit;
+  background-color: #ee4266;
+  color: white;
 }
+.question h2 {
+  color: #ee4266;
+  font-family: monospace;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.questionContainer {
+  width: 80%;
+  margin: 0 auto;
+}
+/* .titleContainer {
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+} */
 
 /* will be background-color #ffffe2; */
