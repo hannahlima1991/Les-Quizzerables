@@ -13,3 +13,8 @@
   font-family: monospace;
   margin-top: 10px;
 }
+@media only screen and (max-width: 770px) {
+  .description {
+    padding: 15px;
+  }
+}
