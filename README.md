@@ -1,13 +1,19 @@
-Welcome to Lés Quizzerables!
-This App was created to help you have fun during quarantine days.
-Created with React,Redux and Bootstrap,this is a fun, intuitive and addictive trivia game that contains 20+ categories in which you can exercise your uselless knowledge and also learn knew things.
+### Welcome to Lés Quizzerables!
+- This App was created to help you have fun during quarantine days.
+- This is a fun, intuitive and addictive trivia game that contains 20+ categories in which you can exercise your uselless knowledge and also learn knew things.
 
-To run this App locally, simply: 
-*clone the project, 
-*open it in your prefered code editor,
-*run npm install,
-*run npm start.
+### Technologies used:
+- React,
+- Redux
+- Bootstrap, 
+- Trivia Db API.
 
-If you would like to experience this app, click here: http://les-quizzerables.surge.sh/
+### To run this App locally, simply: 
+- Clone the project, 
+- Open it in your prefered code editor,
+- npm install,
+- npm start.
 
-Now, all you have to do is to have fun !
+Live link click here: http://les-quizzerables.surge.sh/
+
+
